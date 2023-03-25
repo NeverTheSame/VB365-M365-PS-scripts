@@ -12,16 +12,16 @@
   - [Sync time investigation](#sync-time-investigation)
 - [Build rate statistics for performance related cases](#build-rate-statistics-for-performance-related-cases)
 ## User Story
-- As a support engineer working with VBO performance case
-- I would like to know how to read VBO logs efficiently
+- As a support engineer working with M365 performance case
+- I would like to know how to read M365 logs efficiently
 - So that I could provide the explanation of what exactly takes up the most time and what measures I can take to help with poor performance.
 
 ## Explanation of performance markers
 ### Log Example
 One can find the following lines in the log files:
 ```
-[11.04.2022 08:05:05]   83 (4744)  Download completed: /sites/CYMI/Teste/ELECTROVIDRO_REV00.pdf, 
-URI: https://cymibrasil365.sharepoint.com/sites/CYMI/_layouts/download.aspx?UniqueId=44617414-83cc-5cff-8d9b-1ad55a0edd34&ApiVersion=2.0, 
+[11.04.2022 08:05:05]   83 (4744)  Download completed: /sites/CYMI/Teste/test.pdf, 
+URI: https://tenant.sharepoint.com/sites/CYMI/_layouts/download.aspx?UniqueId=44617414-83cc-5cff-8d9b-1ad55a0edd34&ApiVersion=2.0, 
 size: 2802894, transferred: 2802894
 
 [11.04.2022 08:05:06]   83 (4744)  Download completed
@@ -40,9 +40,9 @@ size: 2802894, transferred: 2802894
    1. Display **Saving time** - time to save items to the database without content (fields, contents, web parts, attachments BUT information about all these metadata will be saved). It shows accumulated value, e.g.
    ```
    [11.04.2022 00:09:14]   78 (20176) Requesting changed item versions properties..
-   [11.04.2022 00:09:19]   78 (20176)  Saving item: /sites/CYMI/Teste/EQUIPO PATIO.xlsx, version: 0, label: 2.0..
+   [11.04.2022 00:09:19]   78 (20176)  Saving item: /sites/CYMI/Teste/test.xlsx, version: 0, label: 2.0..
    [11.04.2022 00:09:21]   78 (20176)   Saving time: 00:00:04.6771788
-   [11.04.2022 00:09:21]   78 (20176)  Saving item: /sites/CYMI/Teste/Obsoletos..
+   [11.04.2022 00:09:21]   78 (20176)  Saving item: /sites/CYMI/Teste/test
    [11.04.2022 00:13:27]   78 (20176)   Saving time: 00:04:10.742124
    ```
    2. The second saving time (00:04:10.7421244) includes the first saving time (00:00:04.6771788). 
